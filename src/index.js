@@ -16,15 +16,24 @@ const pizza = (state= [] , action) => {
     }
     return state 
 }
-const cart = (state= [], action) => {
+const orders = (state= [], action) => {
+    console.log('action payload for orders is',action.payload)
+    if(action.type === 'SET_ADMIN_ORDER'){
+        return action.payload
+    }
     return state;
 }
+const cart = (state =[], action) => {
 
+    return state;
+}
+ 
 //Store
 const reduxStore = createStore (
     combineReducers ({
       pizza,
-      cart  
+      cart ,
+      orders
     }),
      applyMiddleware (logger)
 )
