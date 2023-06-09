@@ -53,35 +53,45 @@ const handleZip = () => {
 
 
 
-    axios.post('/orders')
+    axios.post('/orders',pizzaToAdd)
     .then(response => {
         getPizza();
 
     })
 
+const addPizza = (event) => {
+    event.preventDefault();
+}
+
 
     return(
 
 <>
-<form >
+<form onSubmit={(event) => addPizza(event)} >
         <input 
-        onChange={handleNameChange}
+        onChange={(event) => handleNameChange(event.target.value)}
         type="text" 
         placeholder='Name'
         />
 
 <input 
-        onChange={handleNameChange}
+        onChange={(event) => handleStreetAdress(event.target.value)}
         type="text" 
-        placeholder='Name'
+        placeholder='Street Adress'
         />
 
+<input 
+        onChange={(event) => handleCity(event.target.value)}
+        type="text" 
+        placeholder='City'
+        />
 
-
-
-
-
-
+<input 
+        onChange={(event) => handleZip(event.target.value)}
+        type="text" 
+        placeholder='Zip'
+        />
+<button type='submit'>Submit</button>
 
 </form>
 
