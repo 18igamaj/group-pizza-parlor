@@ -10,8 +10,10 @@ function PizzaListItem({slice, getPizza}){
             <img src={slice.image_path} />
 
         <b>{slice.name} </b> 
-        <p>{slice.description}</p>
+        <p>{slice.description}</p><button>Add</button>
+        <button>Remove</button>
         <p>{slice.price}</p>
+        
         </div>
     )
 

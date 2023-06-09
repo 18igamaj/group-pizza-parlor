@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-
+import CustomerData from '../CustomerData/CustomerData';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
 import PizzaList from '../PizzaList/PizzaList';
@@ -46,6 +46,10 @@ dispatch ({type: 'SET_PIZZA', payload: response.data})
                 <Link to = '/checkOut'>CheckOut</Link>
                 
               </li>
+              <li>
+                <Link to = '/customerData'>Customer Info</Link>
+                
+              </li>
             </ul>
           <div>
             
@@ -55,9 +59,13 @@ dispatch ({type: 'SET_PIZZA', payload: response.data})
             <Route exact path ='/admin'>
             <AdminTable />
             </Route>
+            <Route exact path ='/customerData'>
+            <CustomerData getPizza={getPizza}/>
+            </Route>
             <Route exact path ='/checkOut'>
             <Checkout/>
             </Route>
+
           </div>
           
         

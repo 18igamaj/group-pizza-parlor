@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 
 
-function CustomerData() {
+function CustomerData({getPizza}) {
 
 
 let [pizzaToAdd, setPizzaToAdd] = useState({
