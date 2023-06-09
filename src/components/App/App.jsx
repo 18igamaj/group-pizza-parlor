@@ -2,10 +2,15 @@ import React from 'react';
 import axios from 'axios';
 import './App.css';
 import { useDispatch } from 'react-redux';
+import { useEffect } from 'react';
 import PizzaList from '../PizzaList/PizzaList';
 
 function App() {
-  const dispatch = useDispatch
+
+  const dispatch = useDispatch()
+  useEffect(()=>{
+    getPizza()
+  },[])
 const getPizza = () => {
 axios.get('/api/pizza') 
 .then ( response => {

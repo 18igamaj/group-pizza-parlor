@@ -10,6 +10,7 @@ import { Provider } from 'react-redux';
 //if action type matches string set_pizza then save data from the server 
 //on to our action.payload which will render to our dom
 const pizza = (state= [] , action) => {
+    console.log('action.payload is', action.payload)
     if(action.type === 'SET_PIZZA') {
       return action.payload  
     }
